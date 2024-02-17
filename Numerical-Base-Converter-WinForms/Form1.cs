@@ -201,5 +201,17 @@ namespace Numerical_Base_Converter_WinForms
         {
             listBox1.Items.Clear();
         }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox1.Text = controller.DoCmnd("SGN");
+            }
+            catch
+            {
+                MessageBox.Show("Сначала введите число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

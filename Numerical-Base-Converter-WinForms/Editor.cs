@@ -40,6 +40,17 @@ namespace Numerical_Base_Converter_WinForms
             this.number += delim;
             return Number;
         }
+
+        public string? FlipSign()
+        {
+            if (Number.First() == '-')
+                this.number = Number.Substring(1);
+            else
+                this.number = '-' + Number;
+
+            return Number;
+        }
+
         public string? Bs()
         {
             try
@@ -118,6 +129,9 @@ namespace Numerical_Base_Converter_WinForms
                     break;
                 case "CLR":
                     Clear();
+                    break;
+                case "SGN":
+                    FlipSign();
                     break;
                 default:
                     break;
