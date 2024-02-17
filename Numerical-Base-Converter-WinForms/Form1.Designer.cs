@@ -483,9 +483,9 @@
             button21.BackColor = Color.Red;
             button21.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button21.ForeColor = SystemColors.HighlightText;
-            button21.Location = new Point(412, 702);
+            button21.Location = new Point(408, 679);
             button21.Name = "button21";
-            button21.Size = new Size(94, 29);
+            button21.Size = new Size(98, 52);
             button21.TabIndex = 2;
             button21.Text = "Очистить";
             button21.UseVisualStyleBackColor = false;
