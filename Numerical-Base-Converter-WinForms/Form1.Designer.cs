@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             textBox1 = new TextBox();
             label1 = new Label();
             trackBar1 = new TrackBar();
@@ -63,6 +64,8 @@
             label3 = new Label();
             listBox1 = new ListBox();
             tabPage3 = new TabPage();
+            label4 = new Label();
+            richTextBox1 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
@@ -70,6 +73,7 @@
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -507,12 +511,34 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(label4);
+            tabPage3.Controls.Add(richTextBox1);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(560, 749);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Справка";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label4.Location = new Point(144, 29);
+            label4.Name = "label4";
+            label4.Size = new Size(264, 28);
+            label4.TabIndex = 1;
+            label4.Text = "Справочная информация";
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(29, 72);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.Size = new Size(500, 502);
+            richTextBox1.TabIndex = 0;
+            richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // Form1
             // 
@@ -531,6 +557,8 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -571,5 +599,7 @@
         private ListBox listBox1;
         private Button button21;
         private Label label3;
+        private Label label4;
+        private RichTextBox richTextBox1;
     }
 }
