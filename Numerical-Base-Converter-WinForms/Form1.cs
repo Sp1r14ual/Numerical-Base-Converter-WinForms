@@ -7,6 +7,48 @@ namespace Numerical_Base_Converter_WinForms
         {
             InitializeComponent();
         }
+
+        private bool check_input()
+        {
+            string input = textBox1.Text;
+            int p = controller.Pin;
+
+            foreach (var c in input)
+            {
+                if (c == 'F' && p < 16)
+                    return true;
+                if (c == 'E' && p < 15)
+                    return true;
+                if (c == 'D' && p < 14)
+                    return true;
+                if (c == 'C' && p < 13)
+                    return true;
+                if (c == 'B' && p < 12)
+                    return true;
+                if (c == 'A' && p < 11)
+                    return true;
+                if (c == '9' && p < 10)
+                    return true;
+                if (c == '8' && p < 9)
+                    return true;
+                if (c == '7' && p < 8)
+                    return true;
+                if (c == '6' && p < 7)
+                    return true;
+                if (c == '5' && p < 6)
+                    return true;
+                if (c == '4' && p < 5)
+                    return true;
+                if (c == '3' && p < 4)
+                    return true;
+                if (c == '2' && p < 3)
+                    return true;
+            }
+
+            return false;
+
+        }
+
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             int value = trackBar1.Value;
@@ -132,6 +174,11 @@ namespace Numerical_Base_Converter_WinForms
 
         private void button20_Click(object sender, EventArgs e)
         {
+            if (check_input())
+            {
+                MessageBox.Show("Неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             textBox2.Text = controller.DoCmnd("GO");
         }
     }
