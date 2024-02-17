@@ -194,12 +194,15 @@ namespace Numerical_Base_Converter_WinForms
                 return;
             }
             textBox2.Text = controller.DoCmnd("GO");
-            listBox1.Items.Add(controller.his.GetLastRecord());
+            //listBox1.Items.Add(controller.his.GetLastRecord());
+            Record lastCalc = controller.his.GetLastRecord();
+            dataGridView1.Rows.Add(new string[] {lastCalc.P1, lastCalc.N1, lastCalc.P2, lastCalc.N2});
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
+            //listBox1.Items.Clear();
+            dataGridView1.Rows.Clear();
         }
 
         private void button22_Click(object sender, EventArgs e)

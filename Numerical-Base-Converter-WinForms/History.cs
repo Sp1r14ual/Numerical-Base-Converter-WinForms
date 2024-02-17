@@ -21,6 +21,25 @@ namespace Numerical_Base_Converter_WinForms
             this.number2 = n2;
         }
 
+        public string P1 {
+            get { return p1.ToString(); }
+        }
+
+        public string P2
+        {
+            get { return p2.ToString(); }
+        }
+
+        public string N1
+        {
+            get { return number1; }
+        }
+
+        public string N2
+        {
+            get { return number2; }
+        }
+
         public override string ToString()
         {
             return $"P1: {this.p1}; N1: {this.number1} => P2: {this.p2}; N2: {this.number2}";
