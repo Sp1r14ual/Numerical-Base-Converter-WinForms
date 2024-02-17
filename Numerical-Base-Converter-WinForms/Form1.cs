@@ -159,6 +159,20 @@ namespace Numerical_Base_Converter_WinForms
 
         private void button17_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Contains('.'))
+            {
+                MessageBox.Show("Число уже содержит разделитель целой и дробной части", "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            if (textBox1.Text == String.Empty)
+            {
+                textBox1.Text = controller.DoCmnd("0");
+                textBox1.Text = controller.DoCmnd(".");
+                return;
+            }
+
             textBox1.Text = controller.DoCmnd(".");
         }
 
