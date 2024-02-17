@@ -23,7 +23,7 @@ namespace Numerical_Base_Converter_WinForms
 
         public override string ToString()
         {
-            return $"P1: {this.p1}; P2: {this.p2}; N1: {this.number1}; N2: {this.number2}";
+            return $"P1: {this.p1}; N1: {this.number1} => P2: {this.p2}; N2: {this.number2}";
         }
     }
     public class History
@@ -36,6 +36,11 @@ namespace Numerical_Base_Converter_WinForms
         public void AddRecord(int p1, int p2, string n1, string n2)
         {
             L.Add(new Record(p1, p2, n1, n2));
+        }
+
+        public Record GetLastRecord()
+        {
+            return L.Last();
         }
 
         public void Clear()

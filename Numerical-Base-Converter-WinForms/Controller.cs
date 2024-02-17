@@ -52,8 +52,10 @@ namespace Numerical_Base_Converter_WinForms
                 if (pin != 10)
                     r = Convert_P_10.dval(ed.Number, (Int16)Pin);
                 else
-                    r = double.Parse(ed.Number, CultureInfo.InvariantCulture);
-                //r = Convert.ToDouble(ed.Number);
+                    if (j.Contains('.'))
+                        r = double.Parse(ed.Number, CultureInfo.InvariantCulture);
+                    else
+                        r = int.Parse(ed.Number, CultureInfo.InvariantCulture);
 
                 string res = Convert_10_P.Do(r, (Int32)Pout, acc());
                 St = State.Converted;

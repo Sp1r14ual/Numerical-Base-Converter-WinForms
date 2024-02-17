@@ -180,6 +180,12 @@ namespace Numerical_Base_Converter_WinForms
                 return;
             }
             textBox2.Text = controller.DoCmnd("GO");
+            listBox1.Items.Add(controller.his.GetLastRecord());
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
         }
     }
 }
