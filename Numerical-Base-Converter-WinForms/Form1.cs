@@ -161,7 +161,8 @@ namespace Numerical_Base_Converter_WinForms
         {
             if (textBox1.Text.Contains('.'))
             {
-                MessageBox.Show("Число уже содержит разделитель целой и дробной части", "Ошибка", MessageBoxButtons.OK,
+                MessageBox.Show("Число уже содержит разделитель целой и дробной части", "Ошибка", 
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
@@ -196,7 +197,7 @@ namespace Numerical_Base_Converter_WinForms
             textBox2.Text = controller.DoCmnd("GO");
             //listBox1.Items.Add(controller.his.GetLastRecord());
             Record lastCalc = controller.his.GetLastRecord();
-            dataGridView1.Rows.Add(new string[] {lastCalc.P1, lastCalc.N1, lastCalc.P2, lastCalc.N2});
+            dataGridView1.Rows.Add(new string[] { lastCalc.P1, lastCalc.N1, lastCalc.P2, lastCalc.N2 });
         }
 
         private void button21_Click(object sender, EventArgs e)
@@ -214,6 +215,133 @@ namespace Numerical_Base_Converter_WinForms
             catch
             {
                 MessageBox.Show("Сначала введите число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            List<string> symbols = new List<string>() {"D0", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9",
+                "A", "B", "C", "D", "E", "F", "Oemcomma", "OemPeriod", "Oem2", "Back", "Delete", "Enter",
+                "NumPad0", "NumPad1", "NumPad2", "NumPad3", "NumPad4", "NumPad5", "NumPad6", "NumPad7", "NumPad8", "NumPad9",
+                "Oemplus", "OemMinus"
+            };
+
+            var sym = e.KeyCode.ToString();
+
+            if (!(symbols.Contains(sym)))
+                return;
+
+            switch (sym)
+            {
+                case "D0":
+                case "NumPad0":
+                    textBox1.Text = controller.DoCmnd("0");
+                    break;
+                case "D1":
+                case "NumPad1":
+                    textBox1.Text = controller.DoCmnd("1");
+                    break;
+                case "D2":
+                case "NumPad2":
+                    textBox1.Text = controller.DoCmnd("2");
+                    break;
+                case "D3":
+                case "NumPad3":
+                    textBox1.Text = controller.DoCmnd("3");
+                    break;
+                case "D4":
+                case "NumPad4":
+                    textBox1.Text = controller.DoCmnd("4");
+                    break;
+                case "D5":
+                case "NumPad5":
+                    textBox1.Text = controller.DoCmnd("5");
+                    break;
+                case "D6":
+                case "NumPad6":
+                    textBox1.Text = controller.DoCmnd("6");
+                    break;
+                case "D7":
+                case "NumPad7":
+                    textBox1.Text = controller.DoCmnd("7");
+                    break;
+                case "D8":
+                case "NumPad8":
+                    textBox1.Text = controller.DoCmnd("8");
+                    break;
+                case "D9":
+                case "NumPad9":
+                    textBox1.Text = controller.DoCmnd("9");
+                    break;
+                case "A":
+                    textBox1.Text = controller.DoCmnd("A");
+                    break;
+                case "B":
+                    textBox1.Text = controller.DoCmnd("B");
+                    break;
+                case "C":
+                    textBox1.Text = controller.DoCmnd("C");
+                    break;
+                case "D":
+                    textBox1.Text = controller.DoCmnd("D");
+                    break;
+                case "E":
+                    textBox1.Text = controller.DoCmnd("E");
+                    break;
+                case "F":
+                    textBox1.Text = controller.DoCmnd("F");
+                    break;
+                case "Oemcomma":
+                case "OemPeriod":
+                case "Oem2":
+                    if (textBox1.Text.Contains('.'))
+                    {
+                        MessageBox.Show("Число уже содержит разделитель целой и дробной части", "Ошибка", 
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (textBox1.Text == String.Empty)
+                    {
+                        textBox1.Text = controller.DoCmnd("0");
+                        textBox1.Text = controller.DoCmnd(".");
+                        return;
+                    }
+
+                    textBox1.Text = controller.DoCmnd(".");
+                    break;
+                case "Back":
+                    textBox1.Text = controller.DoCmnd("BS");
+                    break;
+                case "Delete":
+                    textBox1.Text = controller.DoCmnd("CLR");
+                    break;
+                case "Enter":
+                    if (check_input())
+                    {
+                        MessageBox.Show("Неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    
+                    textBox2.Text = controller.DoCmnd("GO");
+                    Record lastCalc = controller.his.GetLastRecord();
+                    dataGridView1.Rows.Add(new string[] { lastCalc.P1, lastCalc.N1, lastCalc.P2, lastCalc.N2 });
+                    break;
+                case "Oemplus":
+                case "OemMinus":
+                    try
+                    {
+                        textBox1.Text = controller.DoCmnd("SGN");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Сначала введите число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+                default:
+                    break;
             }
         }
     }

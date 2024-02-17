@@ -52,7 +52,7 @@ namespace Numerical_Base_Converter_WinForms
                 if (pin != 10)
                     r = Convert_P_10.dval(ed.Number, (Int16)Pin);
                 else
-                    if (j.Contains('.'))
+                    if (ed.Number.Contains('.'))
                         r = double.Parse(ed.Number, CultureInfo.InvariantCulture);
                     else
                         r = int.Parse(ed.Number, CultureInfo.InvariantCulture);
