@@ -13,6 +13,9 @@ namespace Numerical_Base_Converter_WinForms
             string input = textBox1.Text;
             int p = controller.Pin;
 
+            if (input == String.Empty)
+                return true;
+
             foreach (var c in input)
             {
                 if (c == 'F' && p < 16)
