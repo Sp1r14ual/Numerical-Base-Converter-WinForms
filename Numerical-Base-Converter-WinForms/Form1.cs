@@ -1,3 +1,5 @@
+using System.Drawing.Imaging;
+
 namespace Numerical_Base_Converter_WinForms
 {
     public partial class Form1 : Form
@@ -85,7 +87,19 @@ namespace Numerical_Base_Converter_WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = controller.DoCmnd("0");
+            if (textBox1.Text == String.Empty)
+            {
+                textBox1.Text = controller.DoCmnd("0");
+                textBox1.Text = controller.DoCmnd(".");
+            }
+            else if (textBox1.Text == "0")
+            {
+                return;
+            }
+            else
+            {
+                textBox1.Text = controller.DoCmnd("0");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -268,7 +282,19 @@ namespace Numerical_Base_Converter_WinForms
             {
                 case "D0":
                 case "NumPad0":
-                    textBox1.Text = controller.DoCmnd("0");
+                    if (textBox1.Text == String.Empty)
+                    {
+                        textBox1.Text = controller.DoCmnd("0");
+                        textBox1.Text = controller.DoCmnd(".");
+                    }
+                    else if (textBox1.Text.Length == 1 && textBox1.Text == "0")
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        textBox1.Text = controller.DoCmnd("0");
+                    }
                     break;
                 case "D1":
                 case "NumPad1":
