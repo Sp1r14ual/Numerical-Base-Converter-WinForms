@@ -49,9 +49,6 @@ namespace Numerical_Base_Converter_WinForms
     {
         private List<Record> L;
 
-        //Зачем это надо???
-        //public Record this[int i] { };
-
         public void AddRecord(int p1, int p2, string n1, string n2)
         {
             L.Add(new Record(p1, p2, n1, n2));

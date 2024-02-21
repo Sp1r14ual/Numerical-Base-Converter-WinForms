@@ -88,8 +88,6 @@ namespace Numerical_Base_Converter_WinForms
 
             return isNegative ? -(integerPart + fractionPart) : integerPart + fractionPart;
         }
-
-        //Зачем это нужно вообще ???
         private static double convert(string P_num, int P, double weight)
         {
             double result = 0;

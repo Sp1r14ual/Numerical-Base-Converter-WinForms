@@ -15,7 +15,6 @@ namespace Numerical_Base_Converter_WinForms
         private const string zero = "0";
         public string Number
         {
-            //Почему просто get; не работает???
             get
             {
                 return number;
