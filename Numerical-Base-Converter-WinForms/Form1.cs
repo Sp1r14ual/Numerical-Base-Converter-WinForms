@@ -95,71 +95,99 @@ namespace Numerical_Base_Converter_WinForms
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 3)
+                return;
             textBox1.Text = controller.DoCmnd("2");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 4)
+                return;
             textBox1.Text = controller.DoCmnd("3");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 5)
+                return;
             textBox1.Text = controller.DoCmnd("4");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 6)
+                return;
             textBox1.Text = controller.DoCmnd("5");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 7)
+                return;
             textBox1.Text = controller.DoCmnd("6");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 8)
+                return;
             textBox1.Text = controller.DoCmnd("7");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 9)
+                return;
             textBox1.Text = controller.DoCmnd("8");
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 10)
+                return;
             textBox1.Text = controller.DoCmnd("9");
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 11)
+                return;
             textBox1.Text = controller.DoCmnd("A");
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 12)
+                return;
             textBox1.Text = controller.DoCmnd("B");
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 13)
+                return;
             textBox1.Text = controller.DoCmnd("C");
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 14)
+                return;
             textBox1.Text = controller.DoCmnd("D");
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 15)
+                return;
             textBox1.Text = controller.DoCmnd("E");
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
+            if (controller.Pin < 16)
+                return;
             textBox1.Text = controller.DoCmnd("F");
         }
 
@@ -248,52 +276,80 @@ namespace Numerical_Base_Converter_WinForms
                     break;
                 case "D2":
                 case "NumPad2":
+                    if (controller.Pin < 3)
+                        return;
                     textBox1.Text = controller.DoCmnd("2");
                     break;
                 case "D3":
                 case "NumPad3":
+                    if (controller.Pin < 4)
+                        return;
                     textBox1.Text = controller.DoCmnd("3");
                     break;
                 case "D4":
                 case "NumPad4":
+                    if (controller.Pin < 5)
+                        return;
                     textBox1.Text = controller.DoCmnd("4");
                     break;
                 case "D5":
                 case "NumPad5":
+                    if (controller.Pin < 6)
+                        return;
                     textBox1.Text = controller.DoCmnd("5");
                     break;
                 case "D6":
                 case "NumPad6":
+                    if (controller.Pin < 7)
+                        return;
                     textBox1.Text = controller.DoCmnd("6");
                     break;
                 case "D7":
                 case "NumPad7":
+                    if (controller.Pin < 8)
+                        return;
                     textBox1.Text = controller.DoCmnd("7");
                     break;
                 case "D8":
                 case "NumPad8":
+                    if (controller.Pin < 9)
+                        return;
                     textBox1.Text = controller.DoCmnd("8");
                     break;
                 case "D9":
                 case "NumPad9":
+                    if (controller.Pin < 10)
+                        return;
                     textBox1.Text = controller.DoCmnd("9");
                     break;
                 case "A":
+                    if (controller.Pin < 11)
+                        return;
                     textBox1.Text = controller.DoCmnd("A");
                     break;
                 case "B":
+                    if (controller.Pin < 12)
+                        return;
                     textBox1.Text = controller.DoCmnd("B");
                     break;
                 case "C":
+                    if (controller.Pin < 13)
+                        return;
                     textBox1.Text = controller.DoCmnd("C");
                     break;
                 case "D":
+                    if (controller.Pin < 14)
+                        return;
                     textBox1.Text = controller.DoCmnd("D");
                     break;
                 case "E":
+                    if (controller.Pin < 15)
+                        return;
                     textBox1.Text = controller.DoCmnd("E");
                     break;
                 case "F":
+                    if (controller.Pin < 16)
+                        return;
                     textBox1.Text = controller.DoCmnd("F");
                     break;
                 case "Oemcomma":
