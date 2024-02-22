@@ -31,6 +31,9 @@ namespace Numerical_Base_Converter_WinForms
 
         public static double dval(string P_num, int P)
         {
+            if (P_num == "0" || P_num == "0.")
+                return 0;
+
             int decimalPointIndex = P_num.IndexOf('.');
             double integerPart = 0;
             double fractionPart = 0;

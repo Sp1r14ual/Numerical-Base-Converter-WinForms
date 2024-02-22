@@ -74,6 +74,9 @@ namespace Numerical_Base_Converter_WinForms
 
         public static string Do(object n, int p, int c)
         {
+            if ((double)n == 0)
+                return "0";
+
             bool isNegative = false;
 
             if (n is int || n is long)
